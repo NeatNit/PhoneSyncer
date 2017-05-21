@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <ScrollViewer  Margin="10,10,10,30">
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Stretch" TextWrapping="Wrap">
+                <Run Text="This can have some sort of huge amount of text, maybe even some sort of crazy, revolutional, hypothetical..."/>
+                <LineBreak/><Run Text="mult-line text?"/>
+                <LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><LineBreak/><Run/><LineBreak/><LineBreak/><LineBreak/><Run/><LineBreak/>
+                <Run Text="And what if there's,"/>
+                <LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/>
+                <Run Text="like,"/>
+                <LineBreak/><Run/><LineBreak/>
+                <Run Text="too much text and you need to scroll? fffffffffffffffffffffffffffffffffffffffffffffffffffff"/>
+                <LineBreak/><Run/>
+                <Run Text="What would happen then?"/></TextBlock>
+        </ScrollViewer>
+        <Button x:Name="button" Content="Button" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

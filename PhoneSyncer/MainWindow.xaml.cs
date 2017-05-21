@@ -23,6 +23,28 @@ namespace PhoneSyncer
         public MainWindow()
         {
             InitializeComponent();
+
+            button.Click += Button_Click;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            EnumerateWPDs();
+        }
+
+        private void EnumerateWPDs()
+        {
+            var collection = new PortableDeviceCollection();
+            collection.Refresh();
+            StringBuilder devicelist = new StringBuilder();
+            foreach (var device in collection)
+            {
+                device.Connect();
+                devicelist.AppendLine(device.DeviceId);
+                device.Disconnect();
+            }
+
+            textBlock.Text = devicelist.ToString();
         }
     }
 }
